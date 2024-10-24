@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 from rest_framework import generics
-from .models import Pacientes, Especialidades, Sedes, Citas
-from .serializers import PacientesSerializer, EspecialidadesSerializer, SedesSerializer, CitasSerializer
+from .models import Pacientes, Especialidades, Sedes, Citas,Medicos
+from .serializers import PacientesSerializer, EspecialidadesSerializer, SedesSerializer, CitasSerializer,MedicosSerializer
 
 
 # metodos productos
@@ -35,23 +35,23 @@ class SedesListCreate(generics.ListCreateAPIView):
 
 class SedesDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Sedes.objects.all()
-    serializer_class = SedesSerializer    
-###
-###
-###
-###
-###
-###
-###
-###
-###
-###
-###
+    serializer_class = SedesSerializer
+
+
+class MedicosListCreate(generics.ListCreateAPIView):
+    queryset = Medicos.objects.all()
+    serializer_class = MedicosSerializer
+
+
+class MedicosDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Medicos.objects.all()
+    serializer_class = MedicosSerializer      
 
 
 class CitasListCreate(generics.ListCreateAPIView):
     queryset = Citas.objects.all()
     serializer_class = CitasSerializer
+
 
 
 class CitasDetail(generics.RetrieveUpdateDestroyAPIView):
