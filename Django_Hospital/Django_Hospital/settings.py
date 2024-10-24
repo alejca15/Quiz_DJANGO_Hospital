@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'Django_Hospital.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hospital_test',  # El nombre de tu base de datos en MySQL
+        'USER': 'thylink',  # Tu usuario de MySQL
+        'PASSWORD': 'Irknox!15',  # La contraseña de tu usuario MySQL
+        'HOST': '127.0.0.1',  # Si estás ejecutando MySQL localmente
+        'PORT': '3306',  # El puerto por defecto de MySQL
     }
 }
 
